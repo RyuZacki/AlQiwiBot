@@ -842,6 +842,10 @@ def MenuBalance(call):
         print(repr(e))
 
 # RUN
-# bot.polling(none_stop=True)
 if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+    if ConfigBot.RUN_MODE == 'LOCAL':
+        bot.polling(none_stop=True)
+    elif ConfigBot.RUN_MODE == 'PROD':
+        server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+    else:
+        print('ОШИБКА ЗАПУСКА БОТА')
