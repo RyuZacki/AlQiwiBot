@@ -1,11 +1,27 @@
 import telebot
 import ConfigBot
+import os
 
 from telebot import types
+from flask import Flask, request
 
 bot = telebot.TeleBot(ConfigBot.TOKEN)
+server = Flask(__name__)
 
-# Photo = open('photo_2021-05-28_13-52-15.jpg', 'rb')
+
+@server.route("/")
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url=ConfigBot.HOST + ConfigBot.TOKEN)
+    return "Нихуя се", 200
+
+
+@server.route('/' + ConfigBot.TOKEN, methods=['POST'])
+def updater():
+    response = request.stream.read().decode("utf-8")
+    bot.process_new_updates([telebot.types.Update.de_json(response)])
+    return "!", 200
+
 
 def keyboard(where_call):
     if where_call == 'Categories':
@@ -826,4 +842,6 @@ def MenuBalance(call):
         print(repr(e))
 
 # RUN
-bot.polling(none_stop=True)
+# bot.polling(none_stop=True)
+if __name__ == "__main__":
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
