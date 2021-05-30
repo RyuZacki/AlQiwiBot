@@ -1,6 +1,7 @@
 import telebot
 import ConfigBot
 import os
+import datetime
 
 from telebot import types
 from flask import Flask, request
@@ -276,6 +277,14 @@ def MenuBalance(call):
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Всего у Вас заказов: 0", reply_markup=None)
             elif call.data == 'One1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
+
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -287,14 +296,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 1 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1345531\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 300 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Two1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -306,14 +322,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 2 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1346501\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 600 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Three1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -325,14 +348,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 3 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1344123\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 900 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Four1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -344,14 +374,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 4 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1347583\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 1200 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Five1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -363,14 +400,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 5 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1333312\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 1500 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Six1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -382,14 +426,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 6 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1341340\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 1800 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Seven1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -401,14 +452,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 7 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1347734\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 2100 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Eight1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -420,14 +478,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 8 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1349133\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 2400 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Nine1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -439,14 +504,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 9 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1340015\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 2700 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Ten1':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали минимальный Qiwi кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 300₽.\n'
@@ -458,14 +530,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 10 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1334451\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 3000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'One2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -477,14 +556,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 1 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1330007\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 1000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Two2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -496,14 +582,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 2 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1344432\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 2000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Three2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -515,14 +608,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 3 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1350031\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 3000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Four2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -534,14 +634,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 4 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1337702\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 4000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Five2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -553,14 +660,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 5 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1332209\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 5000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Six2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -572,14 +686,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 6 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1347603\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 6000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Seven2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -591,14 +712,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 7 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1349001\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 7000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Eight2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -610,14 +738,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 8 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1340012\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 8000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Nine2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -629,14 +764,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 9 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1312210\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 9000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Ten2':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали средний кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 1000₽.\n'
@@ -648,14 +790,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 10 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1334410\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 10000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'One3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -667,14 +816,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 1 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1344901\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 2400 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Two3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -686,14 +842,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 2 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1347123\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 4800 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Three3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 7200₽.\n'
@@ -705,14 +868,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 3 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1343321\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 7200 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Four3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -724,14 +894,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 4 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1344566\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 96000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Five3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -743,14 +920,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 5 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1347711\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 12000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Six3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -762,14 +946,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 6 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1341321\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 14400 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Seven3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -781,14 +972,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 7 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1348891\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 16800 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Eight3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -800,14 +998,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 8 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1342431\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 19200 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Nine3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -819,14 +1024,21 @@ def MenuBalance(call):
                                            '📦 Кол-во: 9 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1343947\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 21600 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'Ten3':
+                timestamp = call.message.date
+
+                dt = datetime.datetime.fromtimestamp(timestamp)
+                delta = datetime.timedelta(minutes=20)
+
+                date = dt.strftime('%Y-%m-%d %H:%M:%S')
+                time = (dt + delta).strftime('%H:%M')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text='Вы выбрали максимальный кошелёк\n\n'
                                            '✅ Qiwi кошелёк, цена: 2400₽.\n'
@@ -838,13 +1050,13 @@ def MenuBalance(call):
                                            '📦 Кол-во: 10 шт.\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '💡 Заказ #1344758\n'
-                                           '🕐 Время заказа: Дата\n\n'
+                                           '🕐 Время заказа: {Date}\n\n'
                                            '🕐 Итоговая сумма: 24000 ₽\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            'Перейдите по кнопке для оплаты\n'
                                            '➖➖➖➖➖➖➖➖➖➖➖➖\n'
                                            '⏰ Время на оплату: 20 минут\n'
-                                           '🕜 Необходимо оплатить до Время', reply_markup=keyboard('Order'))
+                                           '🕜 Необходимо оплатить до {time} МСК'.format(Date=date, time=time), reply_markup=keyboard('Order'))
             elif call.data == 'PaymentVer':
                 bot.answer_callback_query(callback_query_id=call.id, show_alert=False, text="Ожидание оплаты")
             elif call.data == 'Cancellation':
