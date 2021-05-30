@@ -1,27 +1,9 @@
 import telebot
-import ConfigBot
-import os
+import BotConfig
 
 from telebot import types
-from flask import Flask, request
 
-bot = telebot.TeleBot(ConfigBot.TOKEN)
-server = Flask(__name__)
-
-
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url=ConfigBot.HOST + ConfigBot.TOKEN)
-    return "Нихуя се", 200
-
-
-@server.route('/' + ConfigBot.TOKEN, methods=['POST'])
-def updater():
-    response = request.stream.read().decode("utf-8")
-    bot.process_new_updates([telebot.types.Update.de_json(response)])
-    return "!", 200
-
+bot = telebot.TeleBot(BotConfig.TOKEN)
 
 def keyboard(where_call):
     if where_call == 'Categories':
