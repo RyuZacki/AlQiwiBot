@@ -841,11 +841,3 @@ def MenuBalance(call):
     except Exception as e:
         print(repr(e))
 
-# RUN
-if __name__ == "__main__":
-    if ConfigBot.RUN_MODE == 'LOCAL':
-        bot.polling(none_stop=True)
-    elif ConfigBot.RUN_MODE == 'PROD':
-        server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
-    else:
-        print('ОШИБКА ЗАПУСКА БОТА')
